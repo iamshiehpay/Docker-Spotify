@@ -4,7 +4,6 @@
   "description": "Spotify Profile",
   "main": "server/index.js",
   "keywords": [],
-  "author": "Brittany Chiang <brittany.chiang@gmail.com>",
   "license": "ISC",
   "engines": {
     "node": "10.13.0"
