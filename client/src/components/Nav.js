@@ -69,6 +69,11 @@ const Menu = styled.ul`
     justify-content: center;
   `};
 `;
+const Show = styled.div`
+  width: 10px;
+  height: 10px;
+  background-color: inherit;
+`;
 const MenuItem = styled.li`
   color: ${colors.lightGrey};
   font-size: 11px;
@@ -152,6 +157,9 @@ const Nav = () => (
         </NavLink>
       </MenuItem>
     </Menu>
+    <Show>
+
+    </Show>
   </Container>
 );
 
