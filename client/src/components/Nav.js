@@ -1,14 +1,7 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
-import {
-  IconSpotify,
-  IconUser,
-  IconTime,
-  IconMicrophone,
-  IconPlaylist,
-  IconMusic
-} from './icons';
+import { IconSpotify, IconUser, IconTime, IconMicrophone, IconPlaylist, IconMusic } from './icons';
 
 import styled from 'styled-components/macro';
 import { theme, mixins, media } from '../styles';
@@ -129,25 +122,25 @@ const Nav = () => (
       <MenuItem>
         <NavLink to="/">
           <IconUser />
-          <div>Profile</div>
+          <div>個人檔案</div>
         </NavLink>
       </MenuItem>
       <MenuItem>
         <NavLink to="artists">
           <IconMicrophone />
-          <div>Top Artists</div>
+          <div>喜愛歌手</div>
         </NavLink>
       </MenuItem>
       <MenuItem>
         <NavLink to="tracks">
           <IconMusic />
-          <div>Top Tracks</div>
+          <div>Top 歌曲</div>
         </NavLink>
       </MenuItem>
       <MenuItem>
         <NavLink to="recent">
           <IconTime />
-          <div>Recent</div>
+          <div>最近聽</div>
         </NavLink>
       </MenuItem>
       <MenuItem>
@@ -157,9 +150,7 @@ const Nav = () => (
         </NavLink>
       </MenuItem>
     </Menu>
-    <Show>
-
-    </Show>
+    <Show></Show>
   </Container>
 );
 

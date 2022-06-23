@@ -25,7 +25,7 @@ const RecentlyPlayed = () => {
 
   return (
     <Main>
-      <h2>Recently Played Tracks</h2>
+      <h2>最近播放過的歌曲</h2>
       <TracksContainer>
         {recentlyPlayed ? (
           recentlyPlayed.items.map(({ track }, i) => <TrackItem track={track} key={i} />)

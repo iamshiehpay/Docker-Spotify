@@ -88,7 +88,7 @@ const FeatureChart = props => {
           },
           title: {
             display: true,
-            text: `Audio Features`,
+            text: `音樂種類分佈`,
             fontSize: 18,
             fontFamily: `${fonts.primary}`,
             fontColor: '#ffffff',

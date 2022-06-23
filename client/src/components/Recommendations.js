@@ -116,18 +116,17 @@ const Recommendations = props => {
       {playlist && (
         <PlaylistHeading>
           <h2>
-            Recommended Tracks Based On{' '}
-            <PlaylistLink to={`/playlists/${playlist.id}`}>{playlist.name}</PlaylistLink>
+            儲存 <PlaylistLink to={`/playlists/${playlist.id}`}>{playlist.name}</PlaylistLink>
           </h2>
           {isFollowing && recPlaylistId ? (
             <OpenButton
               href={`https://open.spotify.com/playlist/${recPlaylistId}`}
               target="_blank"
               rel="noopener noreferrer">
-              Open in Spotify
+              打開 Spotify
             </OpenButton>
           ) : (
-            <SaveButton onClick={catchErrors(createPlaylistOnSave)}>Save to Spotify</SaveButton>
+            <SaveButton onClick={catchErrors(createPlaylistOnSave)}>儲存至歌單</SaveButton>
           )}
         </PlaylistHeading>
       )}

@@ -162,7 +162,7 @@ const Track = props => {
                 href={track.external_urls.spotify}
                 target="_blank"
                 rel="noopener noreferrer">
-                Play on Spotify
+                在 Spotify 上播放
               </PlayTrackButton>
             </Info>
           </TrackContainer>
@@ -172,7 +172,7 @@ const Track = props => {
               <Features>
                 <Feature>
                   <FeatureText>{formatDuration(audioFeatures.duration_ms)}</FeatureText>
-                  <FeatureLabel>Duration</FeatureLabel>
+                  <FeatureLabel>時間</FeatureLabel>
                 </Feature>
                 <Feature>
                   <FeatureText>{parsePitchClass(audioFeatures.key)}</FeatureText>
@@ -180,11 +180,11 @@ const Track = props => {
                 </Feature>
                 <Feature>
                   <FeatureText>{audioFeatures.mode === 1 ? 'Major' : 'Minor'}</FeatureText>
-                  <FeatureLabel>Modality</FeatureLabel>
+                  <FeatureLabel>形式</FeatureLabel>
                 </Feature>
                 <Feature>
                   <FeatureText>{audioFeatures.time_signature}</FeatureText>
-                  <FeatureLabel>Time Signature</FeatureLabel>
+                  <FeatureLabel>拍子記號</FeatureLabel>
                 </Feature>
                 <Feature>
                   <FeatureText>{Math.round(audioFeatures.tempo)}</FeatureText>
@@ -192,7 +192,7 @@ const Track = props => {
                 </Feature>
                 <Feature>
                   <FeatureText>{track.popularity}%</FeatureText>
-                  <FeatureLabel>Popularity</FeatureLabel>
+                  <FeatureLabel>人氣</FeatureLabel>
                 </Feature>
                 <Feature>
                   <FeatureText>{audioAnalysis.bars.length}</FeatureText>
@@ -218,7 +218,7 @@ const Track = props => {
                 href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/"
                 target="_blank"
                 rel="noopener noreferrer">
-                Full Description of Audio Features
+                更多資訊
               </DescriptionLink>
             </AudioFeatures>
           )}

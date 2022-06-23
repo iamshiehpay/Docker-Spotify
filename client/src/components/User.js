@@ -234,14 +234,14 @@ const User = () => {
                 </Stat>
               )}
             </Stats>
-            <LogoutButton onClick={logout}>Logout</LogoutButton>
+            <LogoutButton onClick={logout}>登出</LogoutButton>
           </Header>
 
           <Preview>
             <Tracklist>
               <TracklistHeading>
-                <h3>Top Artists of All Time</h3>
-                <MoreButton to="/artists">See More</MoreButton>
+                <h3>Top 歌手</h3>
+                <MoreButton to="/artists">查看更多</MoreButton>
               </TracklistHeading>
               <div>
                 {topArtists ? (
@@ -268,8 +268,8 @@ const User = () => {
 
             <Tracklist>
               <TracklistHeading>
-                <h3>Top Tracks of All Time</h3>
-                <MoreButton to="/tracks">See More</MoreButton>
+                <h3>Top 歌曲</h3>
+                <MoreButton to="/tracks">查看更多</MoreButton>
               </TracklistHeading>
               <ul>
                 {topTracks ? (

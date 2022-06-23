@@ -1,7 +1,3 @@
-// SPOTIFY WEB API AUTHORIZATION CODE FLOW
-// https://developer.spotify.com/documentation/general/guides/authorization-guide/
-// https://github.com/spotify/web-api-auth-examples
-
 require('dotenv').config();
 
 const CLIENT_ID = process.env.CLIENT_ID;
@@ -41,11 +37,9 @@ const generateRandomString = length => {
 
 const stateKey = 'spotify_auth_state';
 
-// Multi-process to utilize all CPU cores.
 if (cluster.isMaster) {
   console.warn(`Node cluster master ${process.pid} is running`);
 
-  // Fork workers.
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork();
   }
@@ -58,7 +52,6 @@ if (cluster.isMaster) {
 } else {
   const app = express();
 
-  // Priority serve any static files.
   app.use(express.static(path.resolve(__dirname, '../client/build')));
 
   app
@@ -85,7 +78,6 @@ if (cluster.isMaster) {
     const state = generateRandomString(16);
     res.cookie(stateKey, state);
 
-    // your application requests authorization
     const scope =
       'user-read-private user-read-email user-read-recently-played user-top-read user-follow-read user-follow-modify playlist-read-private playlist-read-collaborative playlist-modify-public';
 
@@ -101,9 +93,6 @@ if (cluster.isMaster) {
   });
 
   app.get('/callback', function (req, res) {
-    // your application requests refresh and access tokens
-    // after checking the state parameter
-
     const code = req.query.code || null;
     const state = req.query.state || null;
     const storedState = req.cookies ? req.cookies[stateKey] : null;
@@ -132,7 +121,6 @@ if (cluster.isMaster) {
           const access_token = body.access_token;
           const refresh_token = body.refresh_token;
 
-          // we can also pass the token to the browser to make requests from there
           res.redirect(
             `${FRONTEND_URI}/#${querystring.stringify({
               access_token,
@@ -147,7 +135,6 @@ if (cluster.isMaster) {
   });
 
   app.get('/refresh_token', function (req, res) {
-    // requesting access token from refresh token
     const refresh_token = req.query.refresh_token;
     const authOptions = {
       url: 'https://accounts.spotify.com/api/token',
@@ -171,7 +158,6 @@ if (cluster.isMaster) {
     });
   });
 
-  // All remaining requests return the React app, so it can handle routing.
   app.get('*', function (request, response) {
     response.sendFile(path.resolve(__dirname, '../client/public', 'index.html'));
   });

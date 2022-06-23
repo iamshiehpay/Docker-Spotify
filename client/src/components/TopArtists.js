@@ -152,16 +152,16 @@ const TopArtists = () => {
   return (
     <Main>
       <Header>
-        <h2>Top Artists</h2>
+        <h2>Top 歌手</h2>
         <Ranges>
           <RangeButton isActive={activeRange === 'long'} onClick={() => setRangeData('long')}>
-            <span>All Time</span>
+            <span>全部</span>
           </RangeButton>
           <RangeButton isActive={activeRange === 'medium'} onClick={() => setRangeData('medium')}>
-            <span>Last 6 Months</span>
+            <span>最近六個月</span>
           </RangeButton>
           <RangeButton isActive={activeRange === 'short'} onClick={() => setRangeData('short')}>
-            <span>Last 4 Weeks</span>
+            <span>最近一個月</span>
           </RangeButton>
         </Ranges>
       </Header>

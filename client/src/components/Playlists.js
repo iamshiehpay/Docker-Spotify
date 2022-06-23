@@ -110,7 +110,7 @@ const Playlists = () => {
 
   return (
     <Main>
-      <h2>Your Playlists</h2>
+      <h2>播放清單</h2>
       <Wrapper>
         <PlaylistsContainer>
           {playlists ? (
