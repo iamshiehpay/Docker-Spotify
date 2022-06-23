@@ -18,8 +18,6 @@ RUN yarn
 
 RUN yarn client:install
 
-
-
 # 開放對外的 port
 EXPOSE 3000
 
